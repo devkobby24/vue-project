@@ -4,21 +4,12 @@
   <h1 v-bind:style="{ color: color, fontSize: fontSize }">
     Hello {{ name }}, I hear this is your first Vue.js app!
   </h1>
-    <input v-model="name" placeholder="Enter your name" />
-    <div style="margin: 20px 0;">
-      <button @click="toggleDanger" style="margin-right: 10px;">Toggle Danger/Safety</button>
-      <button v-bind:disabled="isDisabled">Submit Me!</button>
-    </div>
   <div v-html="course"></div>
   <h2
     v-bind:class="isDangerous ? 'danger' : 'safety'"
     v-text="isDangerous ? text : text1"
   ></h2>
-    <ul style="list-style:none; padding:0;">
-      <li v-for="(item, idx) in courses" :key="idx" style="margin: 8px 0;">
-        <span style="font-weight:bold;">{{ item }}</span>
-      </li>
-    </ul>
+  <button v-bind:disabled="isDisabled">Submit Me!</button>
 </template>
 
 <script>
@@ -35,19 +26,7 @@ export default {
       text1: "We are safe",
       color: "blue",
       fontSize: "48px",
-      courses: ["Vue Basics", "Vue Directives", "Vue Components", "Vue Router"],
-      course: '<span style="color:#42b983;font-weight:bold;">Vue.js Course List</span>',
     };
-  },
-  watch: {
-    name(val) {
-      this.isDisabled = !val;
-    }
-  },
-  methods: {
-    toggleDanger() {
-      this.isDangerous = !this.isDangerous;
-    }
   },
 };
 </script>
@@ -84,26 +63,5 @@ export default {
   margin: 0 auto;
   padding: 10px;
   border-radius: 10px;
-}
-
-input {
-  padding: 8px;
-  font-size: 18px;
-  margin-bottom: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-button {
-  padding: 8px 16px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: none;
-  background-color: #42b983;
-  color: white;
-  cursor: pointer;
-}
-button[disabled] {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
 </style>
