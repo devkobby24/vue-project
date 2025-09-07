@@ -1,7 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <h1>Hello {{ name }}, I hear this is your first Vue.js app!</h1>
+  <h1 v-bind:style="{ color: color, fontSize: fontSize }">
+    Hello {{ name }}, I hear this is your first Vue.js app!
+  </h1>
   <div v-html="course"></div>
   <h2
     v-bind:class="isDangerous ? 'danger' : 'safety'"
@@ -22,6 +24,8 @@ export default {
       status: "danger",
       text: "Danger",
       text1: "We are safe",
+      color: "blue",
+      fontSize: "48px",
     };
   },
 };
