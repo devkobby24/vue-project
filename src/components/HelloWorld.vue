@@ -47,9 +47,12 @@ h3 {
 ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 a {
